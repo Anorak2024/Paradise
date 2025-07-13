@@ -667,8 +667,15 @@
 		var/obj/item/restraints = handcuffed
 		if(wear_suit?.breakouttime)
 			restraints = wear_suit
+
 		if(restraints)
 			breakouttime = restraints.breakouttime
+
+		var/list/breakouttime_modifiers = list()
+		SEND_SIGNAL(src, COMSIG_GET_BREAKOUTTIME_MODIFIERS)
+		for(var/modifier as anything in breakouttime_modifiers)
+			breakouttime *= modifier
+
 		visible_message(
 			span_warning("[name] пыта[pluralize_ru(gender, "ет", "ют")]ся себя отстегнуть!"),
 			span_notice("Вы пытаетесь себя отстегнуть. Это займет примерно [breakouttime / 10] секунд[declension_ru(breakouttime / 10, "у", "ы", "")]."),

@@ -1404,3 +1404,4 @@
 #define COMSIG_GET_ORGAN_ICON_STATE "get_organ_icon_state"
 #define COMSIG_STRENGTH_BORDER_UPDATE "strength_border_update"
 #define COMSIG_CRYOPOD_DESPAWN "cryopod_despawn"
+#define COMSIG_GET_BREAKOUTTIME_MODIFIERS "get_breakouttime_modifiers"
